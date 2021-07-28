@@ -1,0 +1,21 @@
+
+<br>
+<br>
+<%= form_for @subscription ,method: :post,url: { action: "create" } do |f| %>
+  <div class="row">
+
+    <div class="col">
+   <%= f.text_field :plan_name, autofocus: true, class: "form-control", placeholder: "plan name" %>
+    </div>
+    <div class="col">
+    <%= f.text_field :price, autofocus: true, class: "form-control", placeholder: "price" %>
+
+    </div>
+    <div class="col">
+    <%= f.submit 'Create' , class: "btn btn-success"%>
+    </div>
+  </div>
+<% end %>
+
+ 
+  

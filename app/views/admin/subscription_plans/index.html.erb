@@ -1,0 +1,41 @@
+    <!-- Content Header (Page header) -->
+  
+  <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <%= button_to "Add plan", new_admin_subscription_plan_path, method: :get, class: "btn btn-success p-2 add_user float-right"  %>
+          </div> 
+        </div>
+        <div class="bootstrap">
+          <div class="row">
+            <div class="col-12">
+                    <table class="table user-list">
+                      <thead>
+                        <tr>
+                          <th><span>Plan name</span></th>
+                          <th><span>Price</span></th>
+                          <th><span>Action</span></th>
+                        </tr>
+                      </thead>
+                      <tbody id="user_list">
+                    <% @subscriptions.each do |s| %>
+                      <tr>
+                                <td>
+                                <span class="user_name" style="font-size: 15px;"><%= s.plan_name %> </span>
+                                </td>
+                                <td><%= s.price %></td>
+                              
+                                <td style="width: 20%;">
+                               <%= link_to "Edit",edit_admin_subscription_plan_path(s), method: :get, class: "table-link edit_button mr-1"  %>
+
+                              <%= link_to "Delete",admin_subscription_plan_path(s), method: :delete, class: "table-link dlt_button"  %>
+                               
+                                </td>
+                            </tr>
+                            <%end%>
+                      </tbody>
+                    </table>
+                  </div>
+          </div>
+        </div>
+     </div>
